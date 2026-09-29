@@ -1,0 +1,49 @@
+\begin{table*}[t]
+\caption{Device forecasting with different information conditions. MSE (kW$^2$) and MAE (kW) average the three native spans with equal date weights. CU-BEMS additionally weights its five common floors equally; its state and all-telemetry columns are the same thermal arm. Neural errors average three seeds. Bold marks the lowest error across information conditions within each model and row, including ties at displayed precision.}
+\label{tab:device}
+\centering\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+\multirow{2}{*}{Source / period} & \multirow{2}{*}{Model} & \multicolumn{2}{c}{History} & \multicolumn{2}{c}{History + state} & \multicolumn{2}{c}{All telemetry}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(l){7-8}
+& & MSE & MAE & MSE & MAE & MSE & MAE\\
+\midrule
+\multirow{3}{*}{\shortstack[l]{BPA\\Spring}} & Ridge & \textbf{0.290} & \textbf{0.218} & 0.314 & 0.246 & 0.335 & 0.273 \\
+ & LightGBM & 0.282 & 0.192 & 0.254 & 0.184 & \textbf{0.253} & \textbf{0.183} \\
+ & N-HiTS & 0.322 & 0.208 & \textbf{0.297} & 0.191 & 0.298 & \textbf{0.189} \\
+\addlinespace[2pt]
+\multirow{3}{*}{\shortstack[l]{BPA\\Summer}} & Ridge & \textbf{0.239} & \textbf{0.198} & 0.256 & 0.223 & 0.334 & 0.290 \\
+ & LightGBM & 0.228 & 0.176 & 0.197 & \textbf{0.166} & \textbf{0.196} & 0.167 \\
+ & N-HiTS & 0.274 & 0.194 & \textbf{0.237} & \textbf{0.174} & 0.251 & 0.185 \\
+\addlinespace[2pt]
+\multirow{3}{*}{\shortstack[l]{Caltech\\Autumn}} & Ridge & \textbf{1.183} & \textbf{0.484} & 1.200 & 0.498 & 1.200 & 0.502 \\
+ & LightGBM & 1.116 & 0.425 & 1.103 & 0.419 & \textbf{1.093} & \textbf{0.415} \\
+ & N-HiTS & \textbf{1.202} & 0.455 & 1.207 & 0.440 & 1.208 & \textbf{0.437} \\
+\addlinespace[2pt]
+\multirow{3}{*}{\shortstack[l]{Caltech\\Winter}} & Ridge & \textbf{1.001} & \textbf{0.431} & 1.043 & 0.463 & 1.064 & 0.473 \\
+ & LightGBM & 1.044 & 0.385 & 1.011 & 0.378 & \textbf{1.000} & \textbf{0.372} \\
+ & N-HiTS & \textbf{1.075} & 0.406 & 1.080 & 0.396 & 1.081 & \textbf{0.392} \\
+\addlinespace[2pt]
+\multirow{3}{*}{\shortstack[l]{Office\\Autumn}} & Ridge & \textbf{2.221} & \textbf{0.856} & 2.588 & 0.946 & 2.788 & 0.997 \\
+ & LightGBM & 2.819 & 0.893 & 2.689 & \textbf{0.886} & \textbf{2.665} & 0.889 \\
+ & N-HiTS & 3.192 & \textbf{0.853} & \textbf{3.169} & 0.859 & 3.367 & 0.921 \\
+\addlinespace[2pt]
+\multirow{3}{*}{\shortstack[l]{Office\\Winter}} & Ridge & \textbf{2.623} & \textbf{0.937} & 2.916 & 0.992 & 2.965 & 1.023 \\
+ & LightGBM & 3.231 & 1.042 & \textbf{2.923} & \textbf{0.995} & 2.942 & 1.004 \\
+ & N-HiTS & 3.372 & \textbf{0.933} & \textbf{3.316} & 0.941 & 3.525 & 1.002 \\
+\addlinespace[2pt]
+\multirow{3}{*}{\shortstack[l]{EPFL\\Later}} & Ridge & 583.010 & 15.910 & \textbf{529.232} & \textbf{14.616} & 561.019 & 15.131 \\
+ & LightGBM & 675.160 & 17.164 & 620.133 & 16.382 & \textbf{614.475} & \textbf{15.959} \\
+ & N-HiTS & \textbf{740.517} & \textbf{17.457} & 798.949 & 18.326 & 874.857 & 18.772 \\
+\addlinespace[2pt]
+\multirow{3}{*}{\shortstack[l]{CU-BEMS\\Sep.--Oct.}} & Ridge & 13.784 & 1.491 & \textbf{13.630} & \textbf{1.460} & \textbf{13.630} & \textbf{1.460} \\
+ & LightGBM & \textbf{3.015} & \textbf{0.427} & 3.317 & 0.473 & 3.317 & 0.473 \\
+ & N-HiTS & \textbf{5.833} & \textbf{0.657} & 6.420 & 0.690 & 6.420 & 0.690 \\
+\addlinespace[2pt]
+\multirow{3}{*}{\shortstack[l]{CU-BEMS\\Nov.--Dec.}} & Ridge & 12.341 & 1.429 & \textbf{12.235} & \textbf{1.402} & \textbf{12.235} & \textbf{1.402} \\
+ & LightGBM & \textbf{4.111} & \textbf{0.488} & 4.658 & 0.558 & 4.658 & 0.558 \\
+ & N-HiTS & \textbf{6.871} & \textbf{0.698} & 7.662 & 0.763 & 7.662 & 0.763 \\
+\bottomrule
+\end{tabular}
+\end{table*}

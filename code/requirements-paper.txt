@@ -1,0 +1,5 @@
+# Manuscript displays only; no training or inference dependencies.
+# These compatibility ranges are not a locked, independently rebuilt environment.
+numpy>=2.0,<3
+pandas>=2.0,<4
+matplotlib>=3.8,<4
